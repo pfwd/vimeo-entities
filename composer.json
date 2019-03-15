@@ -1,5 +1,5 @@
 {
-    "name": "pfwd/vimeo-entites",
+    "name": "pfwd/vimeo-entities",
     "description": "A set of PHP entities that represent the Vimeo API responses",
     "type": "library",
     "authors": [

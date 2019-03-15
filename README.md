@@ -26,7 +26,7 @@ Only Video details are working at the moment
 
 ## Install
 ```
-$ composer require "pfwd/vimeo-entites"
+$ composer require "pfwd/vimeo-entities"
 ```
 
 ## Tests
