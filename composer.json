@@ -2,9 +2,14 @@
     "name": "pfwd/vimeo-entities",
     "description": "A set of PHP entities that represent the Vimeo API responses",
     "type": "library",
+    "keywords": ["vimeo","entities", "model layer"],
+    "homepage": "https://github.com/pfwd/vimeo-entities",
+    "license": "MIT",
     "authors": [
         {
-            "name": "Peter Fisher"
+            "name": "Peter Fisher",
+            "homepage": "http://peterfisher.me.uk",
+            "role": "Developer"
         }
     ],
     "autoload": {
