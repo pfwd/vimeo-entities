@@ -38,6 +38,7 @@ class Video {
 
     /**
      * @param array $data
+     *
      * @return $this
      */
     public function hydrate(array $data): Video
@@ -50,6 +51,7 @@ class Video {
             ->setDuration($data)
             ->setDescription($data)
             ->setName($data)
+            ->setStatus($data)
         ;
 
         return $this;
@@ -144,6 +146,19 @@ class Video {
     {
         if(!empty($data['height'])) {
             $this->entity->setHeight($data['height']);
+        }
+        return $this;
+    }
+
+    /**
+     * @param array $data
+     *
+     * @return Video
+     */
+    public function setStatus(array $data): Video
+    {
+        if(!empty($data['status'])) {
+            $this->entity->setStatus($data['status']);
         }
         return $this;
     }

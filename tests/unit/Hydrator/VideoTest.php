@@ -10,6 +10,7 @@ class VideoTest extends \Codeception\Test\Unit
             "width" => 1848,
             "language" => null,
             "height" => 1080,
+            "status" => "available"
         ];
     /**
      * @var \UnitTester
@@ -107,5 +108,15 @@ class VideoTest extends \Codeception\Test\Unit
     public function testWidth()
     {
         $this->assertEquals($this->data['width'], $this->entiity->getWidth());
+    }
+
+    /**
+     * @group hydrator
+     * @group hydrator-video
+     * @group hydrator-video-status
+     */
+    public function testStatus()
+    {
+        $this->assertEquals($this->data['status'], $this->entiity->getStatus());
     }
 }

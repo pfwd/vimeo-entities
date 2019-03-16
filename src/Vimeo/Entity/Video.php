@@ -46,6 +46,11 @@ class Video {
      */
     private $language = '';
 
+    /**
+     * @var string
+     */
+    private $status = '';
+
 
     /**
      * @return int|null
@@ -195,6 +200,25 @@ class Video {
     public function setLanguage(string $language): Video
     {
         $this->language = $language;
+
+        return $this;
+    }
+
+    /**
+     * @return string
+     */
+    public function getStatus(): string
+    {
+        return $this->status;
+    }
+
+    /**
+     * @param string $status
+     * @return Video
+     */
+    public function setStatus(string $status): Video
+    {
+        $this->status = $status;
 
         return $this;
     }
