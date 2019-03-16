@@ -52,6 +52,9 @@ class Video {
             ->setDescription($data)
             ->setName($data)
             ->setStatus($data)
+            ->setCreatedTime($data)
+            ->setModifiedTime($data)
+            ->setReleaseTime($data);
         ;
 
         return $this;
@@ -159,6 +162,48 @@ class Video {
     {
         if(!empty($data['status'])) {
             $this->entity->setStatus($data['status']);
+        }
+        return $this;
+    }
+
+    /**
+     * @param array $data
+     *
+     * @return Video
+     */
+    public function setCreatedTime(array $data): Video
+    {
+        if(!empty($data['created_time'])) {
+            $date = \DateTime::createFromFormat(\DateTime::W3C, $data['created_time']);
+            $this->entity->setCreatedTime($date);
+        }
+        return $this;
+    }
+
+    /**
+     * @param array $data
+     *
+     * @return Video
+     */
+    public function setModifiedTime(array $data): Video
+    {
+        if(!empty($data['modified_time'])) {
+            $date = \DateTime::createFromFormat(\DateTime::W3C, $data['modified_time']);
+            $this->entity->setModifiedTime($date);
+        }
+        return $this;
+    }
+
+    /**
+     * @param array $data
+     *
+     * @return Video
+     */
+    public function setReleaseTime(array $data): Video
+    {
+        if(!empty($data['release_time'])) {
+            $date = \DateTime::createFromFormat(\DateTime::W3C, $data['release_time']);
+            $this->entity->setReleaseTime($date);
         }
         return $this;
     }

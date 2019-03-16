@@ -51,6 +51,20 @@ class Video {
      */
     private $status = '';
 
+    /**
+     * @var \DateTime|null
+     */
+    private $createdTime = null;
+
+    /**
+     * @var \DateTime|null
+     */
+    private $modifiedTime = null;
+
+    /**
+     * @var \DateTime|null
+     */
+    private $releaseTime = null;
 
     /**
      * @return int|null
@@ -219,6 +233,66 @@ class Video {
     public function setStatus(string $status): Video
     {
         $this->status = $status;
+
+        return $this;
+    }
+
+    /**
+     * @return \DateTime|null
+     */
+    public function getCreatedTime(): ?\DateTime
+    {
+        return $this->createdTime;
+    }
+
+    /**
+     * @param \DateTime|null $createdTime
+     *
+     * @return Video
+     */
+    public function setCreatedTime(?\DateTime $createdTime): Video
+    {
+        $this->createdTime = $createdTime;
+
+        return $this;
+    }
+
+    /**
+     * @return \DateTime|null
+     */
+    public function getModifiedTime(): ?\DateTime
+    {
+        return $this->modifiedTime;
+    }
+
+    /**
+     * @param \DateTime|null $modifiedTime
+     *
+     * @return Video
+     */
+    public function setModifiedTime(?\DateTime $modifiedTime): Video
+    {
+        $this->modifiedTime = $modifiedTime;
+
+        return $this;
+    }
+
+    /**
+     * @return \DateTime|null
+     */
+    public function getReleaseTime(): ?\DateTime
+    {
+        return $this->releaseTime;
+    }
+
+    /**
+     * @param \DateTime|null $releaseTime
+     *
+     * @return Video
+     */
+    public function setReleaseTime(?\DateTime $releaseTime): Video
+    {
+        $this->releaseTime = $releaseTime;
 
         return $this;
     }

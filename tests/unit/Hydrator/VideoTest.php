@@ -10,8 +10,12 @@ class VideoTest extends \Codeception\Test\Unit
             "width" => 1848,
             "language" => null,
             "height" => 1080,
-            "status" => "available"
+            "status" => "available",
+            "created_time" => "2018-12-01T10:05:08+00:00",
+            "modified_time" => "2018-12-01T10:07:49+00:00",
+            "release_time" => "2018-12-01T10:05:08+00:00"
         ];
+
     /**
      * @var \UnitTester
      */
@@ -25,7 +29,6 @@ class VideoTest extends \Codeception\Test\Unit
     {
         $hydrator = new \PFWD\Vimeo\Hydrator\Type\Video();
         $hydrator->hydrate($this->data);
-        $hydrator->getEntity();
         $entity = $hydrator->getEntity();
         $this->entiity = $entity;
     }
@@ -118,5 +121,35 @@ class VideoTest extends \Codeception\Test\Unit
     public function testStatus()
     {
         $this->assertEquals($this->data['status'], $this->entiity->getStatus());
+    }
+
+    /**
+     * @group hydrator
+     * @group hydrator-video
+     * @group hydrator-created-time
+     */
+    public function testCreatedTime()
+    {
+        $this->assertEquals($this->data['created_time'], $this->entiity->getCreatedTime()->format(DateTime::W3C));
+    }
+
+    /**
+     * @group hydrator
+     * @group hydrator-video
+     * @group hydrator-modified-time
+     */
+    public function testModifiedTime()
+    {
+        $this->assertEquals($this->data['modified_time'], $this->entiity->getModifiedTime()->format(DateTime::W3C));
+    }
+
+    /**
+     * @group hydrator
+     * @group hydrator-video
+     * @group hydrator-released-time
+     */
+    public function testReleasedTime()
+    {
+        $this->assertEquals($this->data['release_time'], $this->entiity->getReleaseTime()->format(DateTime::W3C));
     }
 }
