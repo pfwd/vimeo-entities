@@ -250,9 +250,11 @@ class Video {
      *
      * @return Video
      */
-    public function setCreatedTime(?\DateTime $createdTime): Video
+    public function setCreatedTime(?\DateTime $createdTime = null): Video
     {
-        $this->createdTime = $createdTime;
+        if($createdTime instanceof \DateTime) {
+            $this->createdTime = $createdTime;
+        }
 
         return $this;
     }
@@ -270,9 +272,11 @@ class Video {
      *
      * @return Video
      */
-    public function setModifiedTime(?\DateTime $modifiedTime): Video
+    public function setModifiedTime(?\DateTime $modifiedTime = null): Video
     {
-        $this->modifiedTime = $modifiedTime;
+        if($modifiedTime instanceof \DateTime) {
+            $this->modifiedTime = $modifiedTime;
+        }
 
         return $this;
     }
@@ -290,9 +294,11 @@ class Video {
      *
      * @return Video
      */
-    public function setReleaseTime(?\DateTime $releaseTime): Video
+    public function setReleaseTime(?\DateTime $releaseTime = null): Video
     {
-        $this->releaseTime = $releaseTime;
+        if($releaseTime instanceof \DateTime) {
+            $this->releaseTime = $releaseTime;
+        }
 
         return $this;
     }

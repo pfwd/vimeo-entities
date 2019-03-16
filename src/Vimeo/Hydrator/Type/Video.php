@@ -175,7 +175,9 @@ class Video {
     {
         if(!empty($data['created_time'])) {
             $date = \DateTime::createFromFormat(\DateTime::W3C, $data['created_time']);
-            $this->entity->setCreatedTime($date);
+            if($date) {
+                $this->entity->setCreatedTime($date);
+            }
         }
         return $this;
     }
@@ -189,7 +191,9 @@ class Video {
     {
         if(!empty($data['modified_time'])) {
             $date = \DateTime::createFromFormat(\DateTime::W3C, $data['modified_time']);
-            $this->entity->setModifiedTime($date);
+            if($date) {
+                $this->entity->setModifiedTime($date);
+            }
         }
         return $this;
     }
@@ -203,7 +207,9 @@ class Video {
     {
         if(!empty($data['release_time'])) {
             $date = \DateTime::createFromFormat(\DateTime::W3C, $data['release_time']);
-            $this->entity->setReleaseTime($date);
+            if($date) {
+                $this->entity->setReleaseTime($date);
+            }
         }
         return $this;
     }
