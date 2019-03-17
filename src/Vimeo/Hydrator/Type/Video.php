@@ -245,6 +245,4 @@ class Video {
         return $this->entity;
     }
 
-
-
 }
