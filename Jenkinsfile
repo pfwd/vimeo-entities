@@ -1,16 +1,15 @@
 pipeline {
-    agent {
-        dockerfile {
-            filename 'Dockerfile'
-            args '-v ${PWD}:/app -w /app'
-            reuseNode true
-        }
-    }
-
+    agent any
     stages {
         stage('Test') {
             steps {
-                sh 'bin/phpstan analyse --level=7 src || exit 0'
+                script {
+
+                    def testImage = docker.build("test-image", ".")
+
+                    testImage.inside {
+                        sh 'bin/phpstan analyse --level=7 src || exit 0'
+                    }
             }
         }
     }
