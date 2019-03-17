@@ -1,11 +1,19 @@
 pipeline {
-    agent { dockerfile true }
+    agent {
+        label 'docker'
+    }
 
     stages {
         stage('Test') {
-            steps {
-                sh 'bin/phpstan analyse --level=7 src || exit 0'
+        agent {
+            dockerfile {
+              label 'docker'
+              filename 'Dockerfile'
             }
+          }
+          steps {
+              sh 'bin/phpstan analyse --level=7 src || exit 0'
+          }
         }
     }
 }
