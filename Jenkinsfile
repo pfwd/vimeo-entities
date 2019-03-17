@@ -10,6 +10,7 @@ pipeline {
                     testImage.inside {
                         sh 'bin/phpstan analyse --level=7 src || exit 0'
                     }
+                }
             }
         }
     }
