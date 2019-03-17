@@ -3,6 +3,7 @@ pipeline {
         dockerfile {
             filename 'Dockerfile'
             args '-v ${PWD}:/app -w /app'
+            reuseNode true
         }
     }
 
